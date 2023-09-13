@@ -57,7 +57,8 @@ For detailed explanation on how things work, check out the [documentation](https
 
 ```bash
 # prettierを使って自動フォーマット
-$ npx prettier --check [layouts/default.vue(file name)]
+$ npx prettier --check [filename]
+$ npx prettier --write [filename]
 ```
 
 ## Special Directories
