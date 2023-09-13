@@ -1,13 +1,6 @@
-<template lang="pug">
-div
-    nav-bar 
-    nuxt 
+<template>
+  <div>
+    <nav-bar></nav-bar>
+    <nuxt />
+  </div>
 </template>
-<script>
-import NavBar from '@/components/NuxtLogo.vue'
-export default {
-  components: {
-    NavBar,
-  },
-}
-</script>

@@ -29,7 +29,7 @@
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <nav>ここにナビゲーションを入れる</nav>
+      <nav-bar></nav-bar>
     </v-app-bar>
     <v-main>
       <v-container>
