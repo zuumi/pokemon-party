@@ -1,5 +1,39 @@
 # pokemon-party
 
+## 導入時
+
+```bash
+$ npm init nuxt-app pokemon-party
+
+create-nuxt-app v5.0.0
+✨  Generating Nuxt.js project in pokemon-party
+? Project name: pokemon-party
+? Programming language: TypeScript
+? Package manager: Npm
+? UI framework: Vuetify.js
+? Template engine: Pug
+? Nuxt.js modules: Axios - Promise based HTTP client, Progressive Web App (PWA)
+? Linting tools: ESLint, Prettier, Lint staged files
+? Testing framework: Jest
+? Rendering mode: Single Page App
+? Deployment target: Static (Static/Jamstack hosting)
+? Development tools: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Continuous integration: GitHub Actions (GitHub only)
+? What is your GitHub username? zuumi
+? Version control system: Git
+
+...
+
+```
+
+## バージョン管理
+
+```bash
+$ npm list nuxt
+pokemon-party@1.0.0 /Users/yoooshiii/iam-kawazumi/pokemon-party
+└── nuxt@2.17.1
+```
+
 ## Build Setup
 
 ```bash
@@ -18,6 +52,13 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+## Linter の活用
+
+```bash
+# prettierを使って自動フォーマット
+$ npx prettier --check [layouts/default.vue(file name)]
+```
 
 ## Special Directories
 
