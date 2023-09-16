@@ -4,6 +4,16 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'admin',
+        path: '/admin/',
+        component: resolve(__dirname, 'admin/index.vue'),
+      })
+    },
+  },
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
