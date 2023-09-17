@@ -22,13 +22,22 @@ export default {
       ],
     }
   },
+  head() {
+    return {
+      title: 'ユーザーページ',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'これはユーザページ',
+        },
+      ],
+    }
+  },
   computed: {
     user() {
-      return this.users.find((user) => user.id === this.id)
+      return this.users.find((user) => user.id === Number(this.id))
     },
-  },
-  created() {
-    console.log(this.$route)
   },
 }
 </script>
