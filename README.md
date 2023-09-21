@@ -28,10 +28,34 @@ create-nuxt-app v5.0.0
 
 ## バージョン管理
 
+現状、2 系で構築。ゆくゆくは 3 系にしていきたい..!
+
 ```bash
-$ npm list nuxt
+$ npm list vue
 pokemon-party@1.0.0 /Users/yoooshiii/iam-kawazumi/pokemon-party
-└── nuxt@2.17.1
+├─┬ @nuxtjs/vuetify@1.12.3
+│ └─┬ vuetify-loader@1.9.2
+│   └── vue@2.7.14 deduped
+├─┬ @vue/test-utils@1.3.6
+│ └── vue@2.7.14 deduped
+├─┬ nuxt@2.17.1
+│ ├─┬ @nuxt/babel-preset-app@2.17.1
+│ │ └─┬ @vue/babel-preset-jsx@1.4.0
+│ │   └── vue@2.7.14 deduped
+│ ├─┬ @nuxt/vue-app@2.17.1
+│ │ ├── vue@2.7.14 deduped
+│ │ └─┬ vuex@3.6.2
+│ │   └── vue@2.7.14 deduped
+│ └─┬ @nuxt/vue-renderer@2.17.1
+│   └── vue@2.7.14 deduped
+├─┬ v-tooltip@2.1.3
+│ └─┬ vue-resize@1.0.1
+│   └── vue@2.7.14 deduped
+├─┬ vue-jest@3.0.7
+│ └── vue@2.7.14 deduped
+├── vue@2.7.14
+└─┬ vuetify@2.7.1
+  └── vue@2.7.14 deduped
 ```
 
 ## Build Setup
