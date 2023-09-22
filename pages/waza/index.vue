@@ -5,94 +5,118 @@
       <tbody>
         <th>
           <tr>
-            <label for="">ノーマル：</label>
-            <select
-              v-model="selectedItemA"
-              class="select__waza"
-              style="color: cornsilk"
-            >
-              <option v-for="wazaA in wazaAs" :key="wazaA.No" :value="wazaA">
-                {{ wazaA.わざ }}
-              </option>
-            </select>
-            <table border="1">
-              <thead>
-                <tr>
-                  <th>わざ名</th>
-                  <th>タイプ</th>
-                  <th>充填エネルギー</th>
-                  <th>ターン数</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>{{ selectedItemA.わざ }}</th>
-                  <th>{{ selectedItemA.タイプ }}</th>
-                  <th>{{ selectedItemA.PvPエネルギー充填 }}</th>
-                  <th>{{ selectedItemA.ターン数 }}</th>
-                </tr>
-              </tbody>
-            </table>
+            <draggable>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <label for=""> ノーマル：</label>
+                    <select
+                      v-model="selectedItemA"
+                      class="select__waza"
+                      style="color: cornsilk"
+                    >
+                      <option
+                        v-for="wazaA in wazaAs"
+                        :key="wazaA.No"
+                        :value="wazaA"
+                      >
+                        {{ wazaA.わざ }}
+                      </option>
+                    </select>
+                  </tr>
+                  <tr>
+                    <th>わざ名</th>
+                    <th>タイプ</th>
+                    <th>充填エネルギー</th>
+                    <th>ターン数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>{{ selectedItemA.わざ }}</th>
+                    <th>{{ selectedItemA.タイプ }}</th>
+                    <th>{{ selectedItemA.PvPエネルギー充填 }}</th>
+                    <th>{{ selectedItemA.ターン数 }}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </draggable>
           </tr>
           <tr>
-            <label for="">スペシャルA：</label>
-            <select
-              v-model="selectedItemB"
-              class="select__waza"
-              style="color: cornsilk"
-            >
-              <option v-for="wazaB in wazaBs" :key="wazaB.No" :value="wazaB">
-                {{ wazaB.わざ }}
-              </option>
-            </select>
-            <table border="2">
-              <thead>
-                <tr>
-                  <th>わざ名</th>
-                  <th>タイプ</th>
-                  <th>必要エネルギー</th>
-                  <th>発動周期</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>{{ selectedItemB.わざ }}</th>
-                  <th>{{ selectedItemB.タイプ }}</th>
-                  <th>{{ selectedItemB.PvPエネルギー充填 }}</th>
-                  <th>{{ enecycleA }}</th>
-                </tr>
-              </tbody>
-            </table>
+            <draggable>
+              <table border="2">
+                <thead>
+                  <tr>
+                    <label for="">スペシャルA：</label>
+                    <select
+                      v-model="selectedItemB"
+                      class="select__waza"
+                      style="color: cornsilk"
+                    >
+                      <option
+                        v-for="wazaB in wazaBs"
+                        :key="wazaB.No"
+                        :value="wazaB"
+                      >
+                        {{ wazaB.わざ }}
+                      </option>
+                    </select>
+                  </tr>
+                  <tr>
+                    <th>わざ名</th>
+                    <th>タイプ</th>
+                    <th>必要エネルギー</th>
+                    <th>発動周期</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>{{ selectedItemB.わざ }}</th>
+                    <th>{{ selectedItemB.タイプ }}</th>
+                    <th>{{ selectedItemB.PvPエネルギー充填 }}</th>
+                    <th>{{ enecycleA }}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </draggable>
           </tr>
           <tr>
-            <label for="">スペシャルB：</label>
-            <select
-              v-model="selectedItemC"
-              class="select__waza"
-              style="color: cornsilk"
-            >
-              <option v-for="wazaB in wazaBs" :key="wazaB.No" :value="wazaB">
-                {{ wazaB.わざ }}
-              </option>
-            </select>
-            <table border="2">
-              <thead>
-                <tr>
-                  <th>わざ名</th>
-                  <th>タイプ</th>
-                  <th>必要エネルギー</th>
-                  <th>発動周期</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>{{ selectedItemC.わざ }}</th>
-                  <th>{{ selectedItemC.タイプ }}</th>
-                  <th>{{ selectedItemC.PvPエネルギー充填 }}</th>
-                  <th>{{ enecycleB }}</th>
-                </tr>
-              </tbody>
-            </table>
+            <draggable>
+              <table border="2">
+                <thead>
+                  <tr>
+                    <label for="">スペシャルB：</label>
+                    <select
+                      v-model="selectedItemC"
+                      class="select__waza"
+                      style="color: cornsilk"
+                    >
+                      <option
+                        v-for="wazaB in wazaBs"
+                        :key="wazaB.No"
+                        :value="wazaB"
+                      >
+                        {{ wazaB.わざ }}
+                      </option>
+                    </select>
+                  </tr>
+                  <tr>
+                    <th>わざ名</th>
+                    <th>タイプ</th>
+                    <th>必要エネルギー</th>
+                    <th>発動周期</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>{{ selectedItemC.わざ }}</th>
+                    <th>{{ selectedItemC.タイプ }}</th>
+                    <th>{{ selectedItemC.PvPエネルギー充填 }}</th>
+                    <th>{{ enecycleB }}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </draggable>
           </tr>
         </th>
       </tbody>
@@ -101,17 +125,21 @@
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 import wazaAs from '@/assets/json/PokemonGO-waza-1.json'
 import wazaBs from '@/assets/json/PokemonGO-waza-3.json'
 
 export default {
+  components: {
+    draggable,
+  },
   data() {
     return {
       wazaAs,
       wazaBs,
-      selectedItemA: '',
-      selectedItemB: '',
-      selectedItemC: '',
+      selectedItemA: '　',
+      selectedItemB: '　',
+      selectedItemC: '　',
     }
   },
   computed: {
@@ -162,6 +190,11 @@ export default {
             this.selectedItemA.PvPエネルギー充填
         )
       )
+    },
+  },
+  methods: {
+    touchstart: function (e) {
+      console.log('touch start:%d,%d', e.offsetX, e.offsetY)
     },
   },
 }
