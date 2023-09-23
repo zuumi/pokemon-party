@@ -2,7 +2,7 @@
   <div>
     <nav>
       <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link to="/about">About</nuxt-link>
+      <nuxt-link :to="{ name: 'waza' }">PokemonGO 技シミュレータ</nuxt-link>
     </nav>
   </div>
 </template>
