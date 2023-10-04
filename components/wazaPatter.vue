@@ -27,6 +27,7 @@
                   <tr>
                     <th>わざ名</th>
                     <th>タイプ</th>
+                    <th>威力</th>
                     <th>充填エネルギー</th>
                     <th>ターン数</th>
                   </tr>
@@ -35,6 +36,7 @@
                   <tr>
                     <th>{{ selectedItemA.わざ }}</th>
                     <th>{{ selectedItemA.タイプ }}</th>
+                    <th>{{ selectedItemA.威力 }}</th>
                     <th>{{ selectedItemA.PvPエネルギー充填 }}</th>
                     <th>{{ selectedItemA.ターン数 }}</th>
                   </tr>
@@ -65,6 +67,7 @@
                   <tr>
                     <th>わざ名</th>
                     <th>タイプ</th>
+                    <th>威力</th>
                     <th>必要エネルギー</th>
                     <th>発動周期</th>
                   </tr>
@@ -73,6 +76,7 @@
                   <tr>
                     <th>{{ selectedItemB.わざ }}</th>
                     <th>{{ selectedItemB.タイプ }}</th>
+                    <th>{{ selectedItemB.威力 }}</th>
                     <th>{{ selectedItemB.PvPエネルギー充填 }}</th>
                     <th>{{ enecycleA }}</th>
                   </tr>
@@ -103,6 +107,7 @@
                   <tr>
                     <th>わざ名</th>
                     <th>タイプ</th>
+                    <th>威力</th>
                     <th>必要エネルギー</th>
                     <th>発動周期</th>
                   </tr>
@@ -111,6 +116,7 @@
                   <tr>
                     <th>{{ selectedItemC.わざ }}</th>
                     <th>{{ selectedItemC.タイプ }}</th>
+                    <th>{{ selectedItemC.威力 }}</th>
                     <th>{{ selectedItemC.PvPエネルギー充填 }}</th>
                     <th>{{ enecycleB }}</th>
                   </tr>
@@ -126,8 +132,8 @@
 
 <script>
 import draggable from 'vuedraggable'
-import wazaAs from '@/assets/json/PokemonGO-waza-1.json'
-import wazaBs from '@/assets/json/PokemonGO-waza-3.json'
+import wazaAs from '@/assets/json/pokemon_data_waza_1.json'
+import wazaBs from '@/assets/json/pokemon_data_waza_3.json'
 
 export default {
   components: {
