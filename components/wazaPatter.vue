@@ -156,45 +156,49 @@ export default {
             this.selectedItemA.PvPエネルギー充填
         ) +
         '-' +
-        Math.ceil(
-          (this.selectedItemB.PvPエネルギー充填 -
-            (this.selectedItemB.PvPエネルギー充填 %
-              this.selectedItemA.PvPエネルギー充填)) /
+        (Math.ceil(
+          (this.selectedItemB.PvPエネルギー充填 * 2) /
             this.selectedItemA.PvPエネルギー充填
-        ) +
+        ) -
+          Math.ceil(
+            this.selectedItemB.PvPエネルギー充填 /
+              this.selectedItemA.PvPエネルギー充填
+          )) +
         '-' +
-        Math.ceil(
-          (this.selectedItemB.PvPエネルギー充填 -
-            ((this.selectedItemB.PvPエネルギー充填 -
-              (this.selectedItemB.PvPエネルギー充填 %
-                this.selectedItemA.PvPエネルギー充填)) %
-              this.selectedItemA.PvPエネルギー充填)) /
+        (Math.ceil(
+          (this.selectedItemB.PvPエネルギー充填 * 3) /
             this.selectedItemA.PvPエネルギー充填
-        )
+        ) -
+          Math.ceil(
+            (this.selectedItemB.PvPエネルギー充填 * 2) /
+              this.selectedItemA.PvPエネルギー充填
+          ))
       )
     },
     enecycleB: function () {
       return (
         Math.ceil(
-          this.selectedItemC.PvPエネルギー充填 /
+          this.selectedItemB.PvPエネルギー充填 /
             this.selectedItemA.PvPエネルギー充填
         ) +
         '-' +
-        Math.ceil(
-          (this.selectedItemC.PvPエネルギー充填 -
-            (this.selectedItemC.PvPエネルギー充填 %
-              this.selectedItemA.PvPエネルギー充填)) /
+        (Math.ceil(
+          (this.selectedItemB.PvPエネルギー充填 * 2) /
             this.selectedItemA.PvPエネルギー充填
-        ) +
+        ) -
+          Math.ceil(
+            this.selectedItemB.PvPエネルギー充填 /
+              this.selectedItemA.PvPエネルギー充填
+          )) +
         '-' +
-        Math.ceil(
-          (this.selectedItemC.PvPエネルギー充填 -
-            ((this.selectedItemC.PvPエネルギー充填 -
-              (this.selectedItemC.PvPエネルギー充填 %
-                this.selectedItemA.PvPエネルギー充填)) %
-              this.selectedItemA.PvPエネルギー充填)) /
+        (Math.ceil(
+          (this.selectedItemB.PvPエネルギー充填 * 3) /
             this.selectedItemA.PvPエネルギー充填
-        )
+        ) -
+          Math.ceil(
+            (this.selectedItemB.PvPエネルギー充填 * 2) /
+              this.selectedItemA.PvPエネルギー充填
+          ))
       )
     },
   },
