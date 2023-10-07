@@ -58,13 +58,13 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          title: 'WazaSetting',
+          to: '/waza',
         },
         {
           icon: 'mdi-apps',
-          title: 'About',
-          to: '/about',
+          title: 'PokemonSetting',
+          to: '/pokemon',
         },
       ],
       miniVariant: false,
