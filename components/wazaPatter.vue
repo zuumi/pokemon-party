@@ -11,16 +11,17 @@
                   <tr>
                     <label for=""> ノーマル：</label>
                     <select
-                      v-model="selectedItemA"
+                      v-model="selectedA"
                       class="select__waza"
                       style="color: cornsilk"
+                      @change="setWazaA"
                     >
                       <option
-                        v-for="wazaA in wazaAs"
-                        :key="wazaA.No"
+                        v-for="wazaA in selected1.waza"
+                        :key="wazaA"
                         :value="wazaA"
                       >
-                        {{ wazaA.わざ }}
+                        {{ wazaA }}
                       </option>
                     </select>
                   </tr>
@@ -139,6 +140,7 @@ export default {
   components: {
     draggable,
   },
+  props: ['selected1'],
   data() {
     return {
       wazaAs,
@@ -146,6 +148,7 @@ export default {
       selectedItemA: '　',
       selectedItemB: '　',
       selectedItemC: '　',
+      selectedA: '　',
     }
   },
   computed: {
@@ -205,6 +208,12 @@ export default {
   methods: {
     touchstart: function (e) {
       console.log('touch start:%d,%d', e.offsetX, e.offsetY)
+    },
+    setWazaA() {
+      const selectedItemA = this.wazaAs.find(
+        (wazaA) => wazaA.わざ === this.selectedA
+      )
+      this.selectedItemA = selectedItemA
     },
   },
 }

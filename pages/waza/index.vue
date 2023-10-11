@@ -16,7 +16,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      waza1: 'カウンター',
+      waza1: { waza: ['カウンター', 'あくび'] },
       waza2: 'カウンター',
       waza3: 'カウンター',
     }
