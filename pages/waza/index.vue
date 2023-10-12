@@ -1,8 +1,20 @@
 <template>
   <div class="parent">
-    <waza-patter :selected="waza1"></waza-patter>
-    <waza-patter :selected="waza1"></waza-patter>
-    <waza-patter :selected="waza1"></waza-patter>
+    <waza-patter
+      :selected_1="waza1"
+      :selected_A="wazaA"
+      :selected_B="wazaB"
+    ></waza-patter>
+    <waza-patter
+      :selected_1="waza1"
+      :selected_A="wazaA"
+      :selected_B="wazaB"
+    ></waza-patter>
+    <waza-patter
+      :selected_1="waza1"
+      :selected_A="wazaA"
+      :selected_B="wazaB"
+    ></waza-patter>
   </div>
 </template>
 
@@ -16,9 +28,9 @@ export default Vue.extend({
   },
   data() {
     return {
-      waza1: { waza1: ['カウンター', 'あくび'], wazaA: ['ドラゴンクロー'] },
-      waza2: 'カウンター',
-      waza3: 'カウンター',
+      waza1: ['カウンター'],
+      wazaA: ['ドラゴンクロー'],
+      wazaB: ['ブラストバーン'],
     }
   },
 })

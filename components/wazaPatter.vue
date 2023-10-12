@@ -17,7 +17,7 @@
                       @change="setWaza1"
                     >
                       <option
-                        v-for="waza1 in selected.waza1"
+                        v-for="waza1 in selected_1"
                         :key="waza1"
                         :value="waza1"
                       >
@@ -58,7 +58,7 @@
                       @change="setWazaA"
                     >
                       <option
-                        v-for="wazaA in selected.wazaA"
+                        v-for="wazaA in selected_A"
                         :key="wazaA"
                         :value="wazaA"
                       >
@@ -93,16 +93,17 @@
                   <tr>
                     <label for="">スペシャルB：</label>
                     <select
-                      v-model="selectedItemB"
+                      v-model="selectedB"
                       class="select__waza"
                       style="color: cornsilk"
+                      @change="setWazaB"
                     >
                       <option
-                        v-for="wazaB in wazaABs"
+                        v-for="wazaB in selected_B"
                         :key="wazaB"
                         :value="wazaB"
                       >
-                        {{ wazaB.わざ }}
+                        {{ wazaB }}
                       </option>
                     </select>
                   </tr>
@@ -141,7 +142,7 @@ export default {
   components: {
     draggable,
   },
-  props: ['selected'],
+  props: ['selected_1', 'selected_A', 'selected_B'],
   data() {
     return {
       waza1s,
@@ -223,6 +224,12 @@ export default {
         (wazaA) => wazaA.わざ === this.selectedA
       )
       this.selectedItemA = selecteditemA
+    },
+    setWazaB() {
+      const selecteditemB = this.wazaABs.find(
+        (wazaB) => wazaB.わざ === this.selectedB
+      )
+      this.selectedItemB = selecteditemB
     },
   },
 }
