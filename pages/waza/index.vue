@@ -1,8 +1,8 @@
 <template>
   <div class="parent">
-    <waza-patter :selected1="waza1"></waza-patter>
-    <waza-patter :selected1="waza2"></waza-patter>
-    <waza-patter :selected1="waza3"></waza-patter>
+    <waza-patter :selected="waza1"></waza-patter>
+    <waza-patter :selected="waza1"></waza-patter>
+    <waza-patter :selected="waza1"></waza-patter>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      waza1: { waza: ['カウンター', 'あくび'] },
+      waza1: { waza1: ['カウンター', 'あくび'], wazaA: ['ドラゴンクロー'] },
       waza2: 'カウンター',
       waza3: 'カウンター',
     }
