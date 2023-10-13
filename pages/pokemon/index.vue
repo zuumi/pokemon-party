@@ -17,104 +17,14 @@
         </option>
       </select>
     </p>
-    <div>
-      <input
-        v-model="searchTerm"
-        class="select__pokemon"
-        type="text"
-        placeholder="ポケモンの名前を入力してください"
-      />
-      <ul v-if="searchResults.length > 0">
-        <li v-for="(pokemon, index) in searchResults" :key="index">
-          {{ pokemon.name }}
-        </li>
-      </ul>
-      <p v-else>該当するポケモンは見つかりませんでした。</p>
+    <div v-if="selectedPokemon">
+      <h2>{{ selectedPokemon.name }}</h2>
+      <waza-patter
+        :selected_1="selectedPokemon.waza[0]"
+        :selected_A="selectedPokemon.waza[1]"
+        :selected_B="selectedPokemon.waza[1]"
+      ></waza-patter>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>わざ選択</th>
-          <th>周期</th>
-        </tr>
-      </thead>
-      <tr>
-        <th>
-          <div v-if="selectedPokemon">
-            <h2>{{ selectedPokemon.name }}</h2>
-            <p>
-              <label>技1: </label>
-              <select
-                v-model="selectedWaza1"
-                class="select__pokemon"
-                @change="setWaza1"
-              >
-                <option
-                  v-for="waza in selectedPokemon.waza[0]"
-                  :key="waza"
-                  :value="waza"
-                >
-                  {{ waza }}
-                </option>
-              </select>
-            </p>
-            <h2 v-if="selectedWaza1">{{ selectedWaza1.わざ }}</h2>
-          </div>
-        </th>
-        <th>
-          <div></div>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <div v-if="selectedPokemon">
-            <p>
-              <label>技A: </label>
-              <select
-                v-model="selectedWazaA"
-                class="select__pokemon"
-                @change="setWazaA"
-              >
-                <option
-                  v-for="wazaA in selectedPokemon.waza[1]"
-                  :key="wazaA"
-                  :value="wazaA"
-                >
-                  {{ wazaA }}
-                </option>
-              </select>
-            </p>
-            <h2 v-if="selectedWazaA">{{ selectedWazaA.わざ }}</h2>
-          </div>
-        </th>
-        <th>
-          <div>{{ cycleA }}</div>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <div v-if="selectedPokemon">
-            <p>
-              <label>技B: </label>
-              <select
-                v-model="selectedWazaB"
-                class="select__pokemon"
-                @change="setWazaB"
-              >
-                <option
-                  v-for="wazaB in selectedPokemon.waza[1]"
-                  :key="wazaB"
-                  :value="wazaB"
-                >
-                  {{ wazaB }}
-                </option>
-              </select>
-            </p>
-            <h2 v-if="selectedWazaB">{{ selectedWazaB.わざ }}</h2>
-          </div>
-        </th>
-      </tr>
-    </table>
   </div>
 </template>
 
