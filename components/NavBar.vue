@@ -1,9 +1,7 @@
 <template>
   <div>
     <nav>
-      <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link :to="{ name: 'waza' }">PokemonGO 技シミュレータ</nuxt-link>
-      <nuxt-link :to="{ name: 'pokemon' }">ポケモンリスト</nuxt-link>
+      <nuxt-link :to="{ name: 'pokemon' }">技周期</nuxt-link>
     </nav>
   </div>
 </template>
