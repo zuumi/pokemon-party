@@ -18,7 +18,10 @@
       </select>
     </p>
     <div v-if="selectedPokemon">
-      <h2>{{ selectedPokemon.name }}</h2>
+      <h2>
+        {{ selectedPokemon.name
+        }}<pokemon-image :numbering="selectedPokemon.numbering"></pokemon-image>
+      </h2>
       <waza-patter
         :selected_1="selectedPokemon.waza[0]"
         :selected_A="selectedPokemon.waza[1]"
@@ -46,6 +49,7 @@ export default {
       selectedWaza1: null,
       selectedWazaA: null,
       selectedWazaB: null,
+      pokemon: {},
     }
   },
   computed: {
