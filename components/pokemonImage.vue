@@ -50,7 +50,7 @@ export default {
 <style lang="scss">
 .c-pokemon {
   &.-image {
-    width: 100px;
+    width: 200px;
   }
 }
 </style>

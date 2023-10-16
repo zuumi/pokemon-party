@@ -18,10 +18,10 @@
       </select>
     </p>
     <div v-if="selectedPokemon">
-      <h2>
-        {{ selectedPokemon.name
-        }}<pokemon-image :numbering="selectedPokemon.numbering"></pokemon-image>
-      </h2>
+      <h2>{{ selectedPokemon.name }}</h2>
+      <div class="pokeimg">
+        <pokemon-image :numbering="selectedPokemon.numbering"></pokemon-image>
+      </div>
       <waza-patter
         :selected_1="selectedPokemon.waza[0]"
         :selected_A="selectedPokemon.waza[1]"
@@ -93,15 +93,19 @@ export default {
 </script>
 <style lang="scss">
 .select {
-  border: 2px solid #ee7917;
+  border: 2px solid black;
+  width: 450px;
 }
 .select__pokemon {
-  border: 2px solid #ee7917;
-  color: white;
-  background-color: #333;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
   width: 250px;
 }
 div {
   text-align: left;
+}
+.pokeimg {
+  margin: auto;
 }
 </style>

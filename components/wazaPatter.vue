@@ -19,6 +19,7 @@
                       <option
                         v-for="waza1 in selected_1"
                         :key="waza1"
+                        class="c-text"
                         :value="waza1"
                       >
                         {{ waza1 }}
@@ -29,7 +30,7 @@
                     <th>わざ名</th>
                     <th>タイプ</th>
                     <th>威力</th>
-                    <th>充填エネルギー</th>
+                    <th>Ene</th>
                     <th>ターン数</th>
                   </tr>
                 </thead>
@@ -60,6 +61,7 @@
                       <option
                         v-for="wazaA in selected_A"
                         :key="wazaA"
+                        class="c-text"
                         :value="wazaA"
                       >
                         {{ wazaA }}
@@ -70,7 +72,7 @@
                     <th>わざ名</th>
                     <th>タイプ</th>
                     <th>威力</th>
-                    <th>必要エネルギー</th>
+                    <th>Ene</th>
                     <th>発動周期</th>
                   </tr>
                 </thead>
@@ -101,6 +103,7 @@
                       <option
                         v-for="wazaB in selected_B"
                         :key="wazaB"
+                        class="c-text"
                         :value="wazaB"
                       >
                         {{ wazaB }}
@@ -111,7 +114,7 @@
                     <th>わざ名</th>
                     <th>タイプ</th>
                     <th>威力</th>
-                    <th>必要エネルギー</th>
+                    <th>Ene</th>
                     <th>発動周期</th>
                   </tr>
                 </thead>
@@ -235,10 +238,16 @@ export default {
 }
 </script>
 <style lang="scss">
+.c-text {
+  color: black;
+}
 .select__waza {
-  border: 2px solid #ee7917;
+  border: 2px solid black;
 }
 div {
   text-align: left;
+  @media screen and (max-width: 480px) {
+    background-size: cover;
+  }
 }
 </style>
