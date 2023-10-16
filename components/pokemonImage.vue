@@ -17,23 +17,33 @@ export default {
       pokemon: {},
     }
   },
-  created() {
-    fetch('https://pokeapi.co/api/v2/pokemon/' + Number(this.numbering))
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
-        }
-        return response.json()
-      })
-      .then((data) => {
-        this.pokemon = data
-      })
-      .catch((error) => {
-        console.error(
-          'There has been a problem with your fetch operation:',
-          error
-        )
-      })
+  watch: {
+    numbering: {
+      immediate: true,
+      handler(newNumbering) {
+        this.fetchPokemon(newNumbering)
+      },
+    },
+  },
+  methods: {
+    fetchPokemon(numbering) {
+      fetch('https://pokeapi.co/api/v2/pokemon/' + Number(numbering))
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok')
+          }
+          return response.json()
+        })
+        .then((data) => {
+          this.pokemon = data
+        })
+        .catch((error) => {
+          console.error(
+            'There has been a problem with your fetch operation:',
+            error
+          )
+        })
+    },
   },
 }
 </script>
