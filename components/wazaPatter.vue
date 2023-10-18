@@ -227,6 +227,7 @@ div {
 }
 select {
   width: 200px;
+  margin-top: 8px;
 }
 label {
   width: 200px;

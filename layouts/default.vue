@@ -26,10 +26,8 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <nav-bar></nav-bar>
+      <!-- <nav-bar></nav-bar> -->
+      <span>PokemonGOツール</span>
     </v-app-bar>
     <v-main>
       <v-container>

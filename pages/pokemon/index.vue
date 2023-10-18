@@ -94,16 +94,20 @@ export default {
 <style lang="scss">
 .select {
   border: 2px solid black;
-  width: 450px;
+  width: 400px;
+  height: 650px;
+  background-color: #fefbe5;
+  color: #2e2b21;
 }
 .select__pokemon {
   border: 2px solid black;
   color: black;
-  background-color: white;
   width: 250px;
+  color: #2e2b21;
 }
 div {
   text-align: left;
+  color: #2e2b21;
 }
 .pokeimg {
   margin: auto;

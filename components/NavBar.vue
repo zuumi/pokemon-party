@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <nuxt-link :to="{ name: 'pokemon' }">技周期</nuxt-link>
+      <nuxt-link :to="{ name: 'pokemon' }">技サイクル</nuxt-link>
     </nav>
   </div>
 </template>
