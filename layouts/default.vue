@@ -51,17 +51,7 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'WazaSetting',
-          to: '/waza',
-        },
-        {
-          icon: 'mdi-apps',
-          title: 'PokemonSetting',
+          title: 'Pokemon',
           to: '/pokemon',
         },
       ],
