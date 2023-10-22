@@ -95,7 +95,7 @@ export default {
 .select {
   border: 2px solid black;
   width: 400px;
-  height: 650px;
+  height: 670px;
   background-color: #fefbe5;
   color: #2e2b21;
 }

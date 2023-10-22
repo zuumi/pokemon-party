@@ -1,11 +1,15 @@
 <template>
-  <div>
+  <div class="container">
     <img
       v-if="pokemon.sprites && pokemon.sprites.front_default"
       class="c-pokemon -image"
       :src="pokemon.sprites.front_default"
       alt="pokemon image"
     />
+    タイプ:&nbsp;&nbsp;
+    <div v-for="pokemonType in pokemon.types" :key="pokemonType.slot">
+      {{ pokemonType.type.name }}&nbsp;&nbsp;
+    </div>
   </div>
 </template>
 
@@ -52,5 +56,8 @@ export default {
   &.-image {
     width: 200px;
   }
+}
+.container {
+  display: flex;
 }
 </style>
