@@ -1,22 +1,26 @@
 <template>
-  <div class="select">
-    <p>
-      <label>ポケモン：</label>
-      <select
-        v-model="selectedPokemon"
-        placeholder="ポケモンの名前を入力してください"
-        class="select__pokemon"
-        @change="updateMoves"
-      >
-        <option
-          v-for="pokemon in pokemonList"
-          :key="pokemon.name"
-          :value="pokemon.name"
+  <div class="box">
+    <dl>
+      <dt>
+        <label>ポケモン</label>
+      </dt>
+      <dd>
+        <select
+          v-model="selectedPokemon"
+          placeholder="ポケモンの名前を入力してください"
+          class="select__pokemon"
+          @change="updateMoves"
         >
-          {{ pokemon.name }}
-        </option>
-      </select>
-    </p>
+          <option
+            v-for="pokemon in pokemonList"
+            :key="pokemon.name"
+            :value="pokemon.name"
+          >
+            {{ pokemon.name }}
+          </option>
+        </select>
+      </dd>
+    </dl>
     <div v-if="selectedPokemon">
       <h2>{{ selectedPokemon.name }}</h2>
       <div class="pokeimg">
@@ -92,17 +96,17 @@ export default {
 }
 </script>
 <style lang="scss">
-.select {
+.box {
   border: 2px solid black;
   width: 400px;
-  height: 670px;
+  height: 660px;
   background-color: #fefbe5;
   color: #2e2b21;
 }
 .select__pokemon {
   border: 2px solid black;
   color: black;
-  width: 250px;
+  width: 200px;
   color: #2e2b21;
 }
 div {
@@ -111,5 +115,8 @@ div {
 }
 .pokeimg {
   margin: auto;
+}
+label {
+  text-align: center;
 }
 </style>

@@ -1,117 +1,130 @@
 <template>
   <div>
-    <label for="">ノーマル</label>
-    <select
-      v-model="selected1"
-      class="select__waza"
-      style="color: cornsilk"
-      @change="setWaza1"
-    >
-      <option
-        v-for="waza1 in selected_1"
-        :key="waza1"
-        class="c-text"
-        :value="waza1"
-      >
-        {{ waza1 }}
-      </option>
-    </select>
-    <br />
-    <label for="">スペシャルA:</label>
-    <select
-      v-model="selectedA"
-      class="select__waza"
-      style="color: cornsilk"
-      @change="setWazaA"
-    >
-      <option
-        v-for="wazaA in selected_A"
-        :key="wazaA"
-        class="c-text"
-        :value="wazaA"
-      >
-        {{ wazaA }}
-      </option>
-    </select>
-    <br />
-    <label for="">スペシャルB:</label>
-    <select
-      v-model="selectedB"
-      class="select__waza"
-      style="color: cornsilk"
-      @change="setWazaB"
-    >
-      <option
-        v-for="wazaB in selected_B"
-        :key="wazaB"
-        class="c-text"
-        :value="wazaB"
-      >
-        {{ wazaB }}
-      </option>
-    </select>
-    <br />
-    <br />
-    <table border="1">
-      <thead>
-        <tr>
-          <th>わざ名</th>
-          <th>タイプ</th>
-          <th>威力</th>
-          <th>Ene</th>
-          <th>ターン数</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>{{ selectedItem1.わざ }}</th>
-          <th>{{ selectedItem1.タイプ }}</th>
-          <th>{{ selectedItem1.威力 }}</th>
-          <th>{{ selectedItem1.PvPエネルギー充填 }}</th>
-          <th>{{ selectedItem1.ターン数 }}</th>
-        </tr>
-      </tbody>
-    </table>
-    <table border="2">
-      <thead>
-        <tr>
-          <th>わざ名</th>
-          <th>タイプ</th>
-          <th>威力</th>
-          <th>Ene</th>
-          <th>発動周期</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>{{ selectedItemA.わざ }}</th>
-          <th>{{ selectedItemA.タイプ }}</th>
-          <th>{{ selectedItemA.威力 }}</th>
-          <th>{{ selectedItemA.PvPエネルギー充填 }}</th>
-          <th>{{ enecycleA }}</th>
-        </tr>
-      </tbody>
-    </table>
-    <table border="2">
-      <thead>
-        <tr>
-          <th>わざ名</th>
-          <th>タイプ</th>
-          <th>威力</th>
-          <th>Ene</th>
-          <th>発動周期</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>{{ selectedItemB.わざ }}</th>
-          <th>{{ selectedItemB.タイプ }}</th>
-          <th>{{ selectedItemB.威力 }}</th>
-          <th>{{ selectedItemB.PvPエネルギー充填 }}</th>
-          <th>{{ enecycleB }}</th>
-        </tr>
-      </tbody>
-    </table>
+    <dl>
+      <dt>
+        <label for="">ノーマル</label>
+      </dt>
+      <dd>
+        <select
+          v-model="selected1"
+          class="select__waza"
+          style="color: cornsilk"
+          @change="setWaza1"
+        >
+          <option
+            v-for="waza1 in selected_1"
+            :key="waza1"
+            class="c-text"
+            :value="waza1"
+          >
+            {{ waza1 }}
+          </option>
+        </select>
+      </dd>
+      <dt>
+        <label for="">スペシャルA</label>
+      </dt>
+      <dd>
+        <select
+          v-model="selectedA"
+          class="select__waza"
+          style="color: cornsilk"
+          @change="setWazaA"
+        >
+          <option
+            v-for="wazaA in selected_A"
+            :key="wazaA"
+            class="c-text"
+            :value="wazaA"
+          >
+            {{ wazaA }}
+          </option>
+        </select>
+      </dd>
+      <dt>
+        <label for="">スペシャルB</label>
+      </dt>
+      <dd>
+        <select
+          v-model="selectedB"
+          class="select__waza"
+          style="color: cornsilk"
+          @change="setWazaB"
+        >
+          <option
+            v-for="wazaB in selected_B"
+            :key="wazaB"
+            class="c-text"
+            :value="wazaB"
+          >
+            {{ wazaB }}
+          </option>
+        </select>
+      </dd>
+    </dl>
+    <dr />
+    <div class="p-waza">
+      <table border="1">
+        <thead>
+          <tr>
+            <th class="p-waza -name">わざ名</th>
+            <th>タイプ</th>
+            <th>威力</th>
+            <th>Ene</th>
+            <th>ターン数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="p-waza -name">{{ selectedItem1.わざ }}</th>
+            <th>{{ selectedItem1.タイプ }}</th>
+            <th>{{ selectedItem1.威力 }}</th>
+            <th>{{ selectedItem1.PvPエネルギー充填 }}</th>
+            <th>{{ selectedItem1.ターン数 }}</th>
+          </tr>
+        </tbody>
+      </table>
+      <table border="2">
+        <thead>
+          <tr>
+            <th class="p-waza -name">わざ名</th>
+            <th>タイプ</th>
+            <th>威力</th>
+            <th>Ene</th>
+            <th>発動周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="p-waza -name">{{ selectedItemA.わざ }}</th>
+            <th>{{ selectedItemA.タイプ }}</th>
+            <th>{{ selectedItemA.威力 }}</th>
+            <th>{{ selectedItemA.PvPエネルギー充填 }}</th>
+            <th>{{ enecycleA }}</th>
+          </tr>
+        </tbody>
+      </table>
+      <table border="2">
+        <thead>
+          <tr>
+            <th class="p-waza -name">わざ名</th>
+            <th>タイプ</th>
+            <th>威力</th>
+            <th>Ene</th>
+            <th>発動周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="p-waza -name">{{ selectedItemB.わざ }}</th>
+            <th>{{ selectedItemB.タイプ }}</th>
+            <th>{{ selectedItemB.威力 }}</th>
+            <th>{{ selectedItemB.PvPエネルギー充填 }}</th>
+            <th>{{ enecycleB }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -213,11 +226,36 @@ export default {
 }
 </script>
 <style lang="scss">
+.p-waza {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.p-waza {
+  &.-name {
+    width: 30%;
+  }
+}
+dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+dt {
+  width: 30%;
+  padding-bottom: 5px;
+  background-color: #dadada;
+}
+dd {
+  width: 70%;
+  padding-bottom: 5px;
+  background-color: #f3f3f3;
+}
 .c-text {
   color: black;
 }
 .select__waza {
-  border: 2px solid black;
+  color: black;
+  border: 2px solid #dadada;
 }
 div {
   text-align: left;
