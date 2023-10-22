@@ -30,7 +30,7 @@ export default {
     htmlAttrs: {
       lang: 'ja',
     },
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
