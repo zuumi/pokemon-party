@@ -74,6 +74,16 @@ export default {
           this.pokemondesc = data.flavor_text_entries.filter(function (v) {
             return v.language.name === 'ja' && v.version.name === 'sword'
           })
+          if (this.pokemondesc.length === 0) {
+            this.pokemondesc = data.flavor_text_entries.filter(function (v) {
+              return v.language.name === 'ja' && v.version.name === 'y'
+            })
+          }
+          if (this.pokemondesc.length === 0) {
+            this.pokemondesc = data.flavor_text_entries.filter(function (v) {
+              return v.language.name === 'ja' && v.version.name === 'sun'
+            })
+          }
         })
         .catch((error) => {
           console.error(
