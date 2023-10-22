@@ -30,7 +30,7 @@ export default {
     htmlAttrs: {
       lang: 'ja',
     },
-    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -57,6 +57,23 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
+
+  manifest: {
+    name: 'Pokemon GO Tool',
+    short_name: 'Pokemon GO',
+    description: 'Pokemon GO',
+    icons: [
+      {
+        src: 'icon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+    ],
+    start_url: '/pokemon',
+    display: 'fullscreen',
+    theme_color: '#B12A34',
+    background_color: '#B12A34',
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
