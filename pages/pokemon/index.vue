@@ -2,7 +2,7 @@
   <div class="box">
     <dl>
       <dt>
-        <label>ポケモン</label>
+        <label>ポケffモン</label>
       </dt>
       <dd>
         <select
@@ -21,6 +21,13 @@
         </select>
       </dd>
     </dl>
+    <input
+      v-model="filteredPokemon"
+      class="select__pokemon"
+      type="text"
+      placeholder="ポケモンの名前を入力してください"
+      @change="filter"
+    />
     <div v-if="selectedPokemon">
       <h2>{{ selectedPokemon.name }}</h2>
       <div class="pokeimg">
@@ -50,6 +57,7 @@ export default {
       waza1List: Object.values(waza1Data),
       wazaABList: Object.values(wazaABData),
       selectedPokemon: null,
+      filteredPokemon: null,
       selectedWaza1: null,
       selectedWazaA: null,
       selectedWazaB: null,
@@ -73,6 +81,14 @@ export default {
         (pokemon) => pokemon.name === this.selectedPokemon
       )
       this.selectedPokemon = selectedPokemon
+    },
+    filter() {
+      const searchedPokemon = this.pokemonList
+        .map((poke) => {
+          return poke.name === this.filteredPokemon ? poke : undefined
+        })
+        .filter((poke) => typeof poke !== 'undefined')
+      this.selectedPokemon = searchedPokemon[0]
     },
     setWaza1() {
       const selectedWaza1 = this.waza1List.find(
