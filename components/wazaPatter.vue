@@ -1,5 +1,67 @@
 <template>
   <div>
+    <div class="p-waza">
+      <table>
+        <thead>
+          <tr>
+            <th class="p-waza -name">わざ名</th>
+            <th class="p-waza -type">タイプ</th>
+            <th class="p-waza -damage">威力</th>
+            <th class="p-waza -ene">Ene</th>
+            <th class="p-waza -tern">ターン数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="p-waza -name">{{ selectedItem1.わざ }}</th>
+            <th class="p-waza -type">{{ selectedItem1.タイプ }}</th>
+            <th class="p-waza -damage">{{ selectedItem1.威力 }}</th>
+            <th class="p-waza -ene">{{ selectedItem1.PvPエネルギー充填 }}</th>
+            <th class="p-waza -tern">{{ selectedItem1.ターン数 }}</th>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th class="p-waza -name">わざ名</th>
+            <th class="p-waza -type">タイプ</th>
+            <th class="p-waza -damage">威力</th>
+            <th class="p-waza -ene">Ene</th>
+            <th class="p-waza -tern">発動周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="p-waza -name">{{ selectedItemA.わざ }}</th>
+            <th class="p-waza -type">{{ selectedItemA.タイプ }}</th>
+            <th class="p-waza -damage">{{ selectedItemA.威力 }}</th>
+            <th class="p-waza -ene">{{ selectedItemA.PvPエネルギー充填 }}</th>
+            <th class="p-waza -tern">{{ enecycleA }}</th>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th class="p-waza -name">わざ名</th>
+            <th class="p-waza -type">タイプ</th>
+            <th class="p-waza -damage">威力</th>
+            <th class="p-waza -ene">Ene</th>
+            <th class="p-waza -tern">発動周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="p-waza -name">{{ selectedItemB.わざ }}</th>
+            <th class="p-waza -type">{{ selectedItemB.タイプ }}</th>
+            <th class="p-waza -damage">{{ selectedItemB.威力 }}</th>
+            <th class="p-waza -ene">{{ selectedItemB.PvPエネルギー充填 }}</th>
+            <th class="p-waza -tern">{{ enecycleB }}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <dl>
       <dt>
         <label for="">ノーマル</label>
@@ -62,69 +124,6 @@
         </select>
       </dd>
     </dl>
-    <dr />
-    <div class="p-waza">
-      <table border="1">
-        <thead>
-          <tr>
-            <th class="p-waza -name">わざ名</th>
-            <th>タイプ</th>
-            <th>威力</th>
-            <th>Ene</th>
-            <th>ターン数</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="p-waza -name">{{ selectedItem1.わざ }}</th>
-            <th>{{ selectedItem1.タイプ }}</th>
-            <th>{{ selectedItem1.威力 }}</th>
-            <th>{{ selectedItem1.PvPエネルギー充填 }}</th>
-            <th>{{ selectedItem1.ターン数 }}</th>
-          </tr>
-        </tbody>
-      </table>
-      <table border="2">
-        <thead>
-          <tr>
-            <th class="p-waza -name">わざ名</th>
-            <th>タイプ</th>
-            <th>威力</th>
-            <th>Ene</th>
-            <th>発動周期</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="p-waza -name">{{ selectedItemA.わざ }}</th>
-            <th>{{ selectedItemA.タイプ }}</th>
-            <th>{{ selectedItemA.威力 }}</th>
-            <th>{{ selectedItemA.PvPエネルギー充填 }}</th>
-            <th>{{ enecycleA }}</th>
-          </tr>
-        </tbody>
-      </table>
-      <table border="2">
-        <thead>
-          <tr>
-            <th class="p-waza -name">わざ名</th>
-            <th>タイプ</th>
-            <th>威力</th>
-            <th>Ene</th>
-            <th>発動周期</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="p-waza -name">{{ selectedItemB.わざ }}</th>
-            <th>{{ selectedItemB.タイプ }}</th>
-            <th>{{ selectedItemB.威力 }}</th>
-            <th>{{ selectedItemB.PvPエネルギー充填 }}</th>
-            <th>{{ enecycleB }}</th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </template>
 
@@ -144,11 +143,26 @@ export default {
       selected1: '　',
       selectedA: '　',
       selectedB: '　',
+      enecycleA: '',
+      enecycleB: '',
     }
   },
-  computed: {
-    enecycleA: function () {
-      return (
+  methods: {
+    touchstart: function (e) {
+      console.log('touch start:%d,%d', e.offsetX, e.offsetY)
+    },
+    setWaza1() {
+      const selecteditem1 = this.waza1s.find(
+        (waza1) => waza1.わざ === this.selected1
+      )
+      this.selectedItem1 = selecteditem1
+    },
+    setWazaA() {
+      const selecteditemA = this.wazaABs.find(
+        (wazaA) => wazaA.わざ === this.selectedA
+      )
+      this.selectedItemA = selecteditemA
+      this.enecycleA =
         Math.ceil(
           this.selectedItemA.PvPエネルギー充填 /
             this.selectedItem1.PvPエネルギー充填
@@ -171,10 +185,13 @@ export default {
             (this.selectedItemA.PvPエネルギー充填 * 2) /
               this.selectedItem1.PvPエネルギー充填
           ))
-      )
     },
-    enecycleB: function () {
-      return (
+    setWazaB() {
+      const selecteditemB = this.wazaABs.find(
+        (wazaB) => wazaB.わざ === this.selectedB
+      )
+      this.selectedItemB = selecteditemB
+      this.enecycleB =
         Math.ceil(
           this.selectedItemB.PvPエネルギー充填 /
             this.selectedItem1.PvPエネルギー充填
@@ -197,65 +214,55 @@ export default {
             (this.selectedItemB.PvPエネルギー充填 * 2) /
               this.selectedItem1.PvPエネルギー充填
           ))
-      )
-    },
-  },
-  methods: {
-    touchstart: function (e) {
-      console.log('touch start:%d,%d', e.offsetX, e.offsetY)
-    },
-    setWaza1() {
-      const selecteditem1 = this.waza1s.find(
-        (waza1) => waza1.わざ === this.selected1
-      )
-      this.selectedItem1 = selecteditem1
-    },
-    setWazaA() {
-      const selecteditemA = this.wazaABs.find(
-        (wazaA) => wazaA.わざ === this.selectedA
-      )
-      this.selectedItemA = selecteditemA
-    },
-    setWazaB() {
-      const selecteditemB = this.wazaABs.find(
-        (wazaB) => wazaB.わざ === this.selectedB
-      )
-      this.selectedItemB = selecteditemB
     },
   },
 }
 </script>
 <style lang="scss">
 .p-waza {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .p-waza {
   &.-name {
-    width: 30%;
+    width: 37%;
+  }
+  &.-type {
+    width: 23%;
+  }
+  &.-damage {
+    width: 10%;
+  }
+  &.-ene {
+    width: 10%;
+  }
+  &.-tern {
+    width: 20%;
   }
 }
-dl {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+table {
+  border: 1px black;
+  // border-collapse:  collapse; /* セルの線を重ねる */
+  margin: 1px 1px 1px 1px;
+  width: 98%;
 }
-dt {
-  width: 30%;
-  padding-bottom: 5px;
+thead tr th {
   background-color: #dadada;
+  border-right: 1px black;
 }
-dd {
-  width: 70%;
-  padding-bottom: 5px;
-  background-color: #f3f3f3;
+tbody tr th {
+  background-color: #ebe9e9;
+  border-left: 1px balck;
+}
+td {
+  padding: 5px 5px; /* 余白指定 */
 }
 .c-text {
   color: black;
 }
 .select__waza {
   color: black;
-  border: 2px solid #dadada;
+  border: 1px solid #dadada;
 }
 div {
   text-align: left;
@@ -265,7 +272,7 @@ div {
 }
 select {
   width: 200px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 label {
   width: 200px;

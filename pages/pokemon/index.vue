@@ -1,44 +1,39 @@
 <template>
   <div class="box">
+    <div class="box-space">
+      <div>
+        <div class="pokeimg-border">
+          <div v-if="selectedPokemon" class="pokeimg">
+            <h2>{{ selectedPokemon.name }}</h2>
+            <pokemon-image
+              :numbering="selectedPokemon.numbering"
+            ></pokemon-image>
+          </div>
+        </div>
+        <div>
+          <waza-patter
+            v-if="selectedPokemon"
+            :selected_1="selectedPokemon.waza[0]"
+            :selected_A="selectedPokemon.waza[1]"
+            :selected_B="selectedPokemon.waza[1]"
+          ></waza-patter>
+        </div>
+      </div>
+    </div>
     <dl>
       <dt>
-        <label>ポケffモン</label>
+        <label>ポケモン</label>
       </dt>
       <dd>
-        <select
-          v-model="selectedPokemon"
-          placeholder="ポケモンの名前を入力してください"
+        <input
+          v-model="filteredPokemon"
           class="select__pokemon"
-          @change="updateMoves"
-        >
-          <option
-            v-for="pokemon in pokemonList"
-            :key="pokemon.name"
-            :value="pokemon.name"
-          >
-            {{ pokemon.name }}
-          </option>
-        </select>
+          type="text"
+          placeholder="ポケモンの名前を入力してください"
+          @change="filter"
+        />
       </dd>
     </dl>
-    <input
-      v-model="filteredPokemon"
-      class="select__pokemon"
-      type="text"
-      placeholder="ポケモンの名前を入力してください"
-      @change="filter"
-    />
-    <div v-if="selectedPokemon">
-      <h2>{{ selectedPokemon.name }}</h2>
-      <div class="pokeimg">
-        <pokemon-image :numbering="selectedPokemon.numbering"></pokemon-image>
-      </div>
-      <waza-patter
-        :selected_1="selectedPokemon.waza[0]"
-        :selected_A="selectedPokemon.waza[1]"
-        :selected_B="selectedPokemon.waza[1]"
-      ></waza-patter>
-    </div>
   </div>
 </template>
 
@@ -113,14 +108,18 @@ export default {
 </script>
 <style lang="scss">
 .box {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 400px;
-  height: 660px;
-  background-color: #fefbe5;
+  height: 610px;
   color: #2e2b21;
+  background-color: #fff5f5;
+}
+.box-space {
+  height: 570px;
+  background-color: #fff5f5;
 }
 .select__pokemon {
-  border: 2px solid black;
+  border: 1px solid black;
   color: black;
   width: 200px;
   color: #2e2b21;
@@ -130,9 +129,29 @@ div {
   color: #2e2b21;
 }
 .pokeimg {
-  margin: auto;
+  background-color: #378e37;
+  &-border {
+    padding: 10px 10px 10px 10px;
+    background-color: #2e2b21;
+  }
 }
+
 label {
   text-align: center;
+}
+dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+dt {
+  width: 30%;
+  padding-bottom: 5px;
+  background-color: #dadada;
+}
+dd {
+  width: 70%;
+  padding-bottom: 5px;
+  background-color: #f3f3f3;
 }
 </style>

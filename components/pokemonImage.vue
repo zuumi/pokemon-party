@@ -1,24 +1,30 @@
 <template>
   <div>
     <div class="container">
-      <img
-        v-if="pokemon.sprites && pokemon.sprites.front_default"
-        class="c-pokemon -image"
-        :src="pokemon.sprites.front_default"
-        alt="pokemon image"
-      />
+      <div class="c-pokemon -imageSpace">
+        <img
+          v-if="pokemon.sprites && pokemon.sprites.front_default"
+          class="c-pokemon -image"
+          :src="pokemon.sprites.front_default"
+          alt="pokemon image"
+        />
+      </div>
       <div class="c-pokemon -meta">
-        タイプ:&nbsp;
-        <div
-          v-for="pokemonType in pokemon.types"
-          :key="pokemonType.slot"
-          class="c-pokemon -type"
-        >
-          {{ pokemonType.type.name }}&nbsp;
-        </div>
+        <h3>
+          タイプ:<span>&nbsp;</span>
+          <div
+            v-for="pokemonType in pokemon.types"
+            :key="pokemonType.slot"
+            class="c-pokemon -type"
+          >
+            {{ pokemonType.type.name }}&nbsp;
+          </div>
+        </h3>
         <dr />
-        <div v-if="pokemondesc[0]" class="c-pokemon -desc">
-          {{ pokemondesc[0]['flavor_text'] }}
+        <div class="c-pokemon -descSpace">
+          <div v-if="pokemondesc[0]" class="c-pokemon -desc">
+            {{ pokemondesc[0]['flavor_text'] }}
+          </div>
         </div>
       </div>
     </div>
@@ -97,16 +103,23 @@ export default {
 </script>
 <style lang="scss">
 .c-pokemon {
-  &.-image {
+  &.-imageSpace {
     width: 600px;
+  }
+  &.-image {
+    width: 100%;
   }
   &.-type {
     font-size: 16px;
     display: inline;
   }
+  &.-descSpace {
+    width: 200px;
+  }
   &.-desc {
     margin-top: 16px;
     font-size: 16px;
+    width: 100%;
   }
 }
 .container {
